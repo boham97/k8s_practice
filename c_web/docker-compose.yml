@@ -1,0 +1,9 @@
+version: "1.0"
+
+services:
+  c-http-server:
+    build: .
+    ports:
+      - "8081:8081"
+    stdin_open: true # 필요 시 터미널 연결
+    tty: true        # 터미널 지원
