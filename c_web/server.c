@@ -11,6 +11,18 @@
 int init_sock();
 
 int main() {
+    const char *db_host = getenv("DB_HOST");
+    const char *db_port = getenv("DB_PORT");
+    const char *db_user = getenv("DB_USER");
+    const char *db_password = getenv("DB_PASSWORD");
+    const char *db_name = getenv("DB_NAME");
+    
+    printf("Database Configuration:\n");
+    printf("Host: %s\n", db_host);
+    printf("Port: %s\n", db_port);
+    printf("User: %s\n", db_user);
+    printf("Password: %s\n", db_password);
+    printf("Database: %s\n", db_name);
     srand(time(NULL));
     int random = rand();
     int server_fd, client_fd;

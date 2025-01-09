@@ -7,3 +7,9 @@ services:
       - "8081:8081"
     stdin_open: true # 필요 시 터미널 연결
     tty: true        # 터미널 지원
+    environment:
+      DB_HOST: 192.168.1.100
+      DB_PORT: 3306
+      DB_USER: myuser
+      DB_PASSWORD: mypassword
+      DB_NAME: mydatabase
