@@ -16,7 +16,7 @@ nginx를 수동으로 켜보자
 
 - kubectl run nginx-app --image nginx --port=80
 - kubectl get pods
-- kubectl.exe  get service
+- kubectl  get service
 - kubectl delete pod nginx-app
 - kubectl delete svc nginx-app
 
@@ -39,3 +39,12 @@ nginx를 수동으로 켜보자
 `kubectl annotate deployment.apps/nginx-deploy kubernetes.io/chang-cause="iamge uddated"`
 `kubectl rollout history deployment.apps/nginx-deploy`
 `kubectl rollout undo deploymenty.apps/nginx-deploy`
+
+kubectl run nginx --image=nginx --port=80
+
+
+
+ingress
+- kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.0.0/deploy/static/provider/baremetal/deploy.yaml
+- kubectl expose pod nginx-app
+- kubectl logs ingress-nginx-controller-55fcb69dd7-hl65q -n ingress-nginx

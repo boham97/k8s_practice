@@ -1,0 +1,26 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: c-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  ingressClassName: nginx  #???
+  rules:
+  - host: ""
+    http:
+      paths:
+      - path: /n
+        pathType: Prefix
+        backend:
+          service:
+            name: nginx
+            port:
+              number: 80
+      - path: /c
+        pathType: Prefix
+        backend:
+          service:
+            name: c-web
+            port:
+              number: 8081  

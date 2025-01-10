@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: c-deploy
+  labels:
+    app: c-web
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: c-web
+  template:
+    metadata:
+      labels:
+        app: c-web
+    spec:
+      containers:
+      - name: c-web
+        image: c_web-c-http-server
+        ports:
+        - containerPort: 8081
+        imagePullPolicy: Never
