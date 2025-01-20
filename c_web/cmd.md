@@ -48,3 +48,7 @@ ingress
 - kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.0.0/deploy/static/provider/baremetal/deploy.yaml
 - kubectl expose pod nginx-app
 - kubectl logs ingress-nginx-controller-55fcb69dd7-hl65q -n ingress-nginx
+
+mysql
+ kubectl run -it --rm --image=mysql:5.6 --restart=Never mysql-client -- mysql -h mysql -ppassword
+ show  databases;
